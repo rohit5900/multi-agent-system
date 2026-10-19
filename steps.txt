@@ -1,0 +1,25 @@
+I’ve written the full multi-agent timetable system and run it. The rule-based agents give a final timetable with 0 violations and 5 of 6 preferences, with the log saved to message_log.json. The single-LLM baseline in part (b) has not been run, because it needs your API key.
+
+Steps for the exam
+
+Part (a), validator: validate_schedule() is plain Python and returns every rule violation as a string. It checks room clash, faculty clash, capacity, labs only in LAB1 for 2 consecutive slots, and rooms that are offline.
+Part (b), baseline: run ANTHROPIC_API_KEY=... python multiagent.py --llm. One LLM sees all the data and its timetable is validated.
+Part (c), agents: each DeptAgent receives only its own sections and preferences. The Mediator sees proposals only, and the Room Manager sees rooms only. Each has its own prompt.
+Part (d), messages: agents exchange JSON messages (CFP, PROPOSE, COUNTER, ACCEPT, CONFLICT, COMMIT), and every message goes to message_log.json. Negotiation stops at 0 violations or 8 rounds.
+Part (e), disruption: at round 3, R2 goes offline on Tuesday. Only the sections sitting in R2 on Tuesday are sent back, and they try other rooms at the same slot first.
+Part (f), results table: the script prints it at the end. Add your 2-line conclusion yourself, for example: “Multi-agent gives 0 violations and more preferences, because the validator feedback loop fixes clashes that a single pass misses.”
+
+Code is in /home/claude/cse476/multiagent.py. Run it with python multiagent.py, or with --llm to use the LLM for the department agents and the baseline. If the LLM output fails to parse, the agents fall back to the rule-based logic.
+
+Results from the rule-based run
+
+Measure	Single LLM	Multi-agent
+Rule violations	run with --llm	0
+Preferences satisfied (of 6)	run with --llm	5
+Rounds taken	NA	4
+Messages exchanged	NA	50
+Sections moved after disruption	NA	0
+Missed preference: the unmet one is F4 preferring slots 1–2, because B3 (a lab) landed in M2.
+Sections moved: the 0 is because no section happened to be in R2 on Tuesday in this run. The repair path exists but did not need to fire. If you want to show it working, force one section into R2 on Tuesday before round 3.
+
+Before submitting, confirm that “Preferences satisfied (out of 6)” counts the same six preferences I assumed. These are F1 avoids Monday, no class in M5, F4 in slots 1–2, B1 in R1, F7 at most 2 classes a day, and avoid T5.

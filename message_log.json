@@ -1,0 +1,466 @@
+[
+  {
+    "id": 1,
+    "round": 1,
+    "from": "Mediator",
+    "to": "DeptA",
+    "type": "CFP",
+    "body": {
+      "sections": [
+        "A1",
+        "A2",
+        "A3",
+        "A4"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "round": 1,
+    "from": "DeptA",
+    "to": "Mediator",
+    "type": "PROPOSE",
+    "body": {
+      "proposals": [
+        {
+          "section": "A1",
+          "slot": "T1",
+          "room_pref": null
+        },
+        {
+          "section": "A2",
+          "slot": "M1",
+          "room_pref": null
+        },
+        {
+          "section": "A3",
+          "slot": "T2",
+          "room_pref": null
+        },
+        {
+          "section": "A4",
+          "slot": "M2",
+          "room_pref": null
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "round": 1,
+    "from": "Mediator",
+    "to": "DeptB",
+    "type": "CFP",
+    "body": {
+      "sections": [
+        "B1",
+        "B2",
+        "B3",
+        "B4"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "round": 1,
+    "from": "DeptB",
+    "to": "Mediator",
+    "type": "PROPOSE",
+    "body": {
+      "proposals": [
+        {
+          "section": "B1",
+          "slot": "M1",
+          "room_pref": "R1"
+        },
+        {
+          "section": "B2",
+          "slot": "M3",
+          "room_pref": null
+        },
+        {
+          "section": "B3",
+          "slot": "T1",
+          "room_pref": null
+        },
+        {
+          "section": "B4",
+          "slot": "T3",
+          "room_pref": null
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "round": 1,
+    "from": "Mediator",
+    "to": "DeptC",
+    "type": "CFP",
+    "body": {
+      "sections": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "round": 1,
+    "from": "DeptC",
+    "to": "Mediator",
+    "type": "PROPOSE",
+    "body": {
+      "proposals": [
+        {
+          "section": "C1",
+          "slot": "M1",
+          "room_pref": null
+        },
+        {
+          "section": "C2",
+          "slot": "M2",
+          "room_pref": null
+        },
+        {
+          "section": "C3",
+          "slot": "M1",
+          "room_pref": null
+        },
+        {
+          "section": "C4",
+          "slot": "M3",
+          "room_pref": null
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "round": 1,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "B1",
+      "slot": "M1",
+      "room": "R1"
+    }
+  },
+  {
+    "id": 8,
+    "round": 1,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "C3",
+      "slot": "M1",
+      "room": "R2"
+    }
+  },
+  {
+    "id": 9,
+    "round": 1,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "A1",
+      "slot": "T1",
+      "room": "R1"
+    }
+  },
+  {
+    "id": 10,
+    "round": 1,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "B4",
+      "slot": "T3",
+      "room": "R1"
+    }
+  },
+  {
+    "id": 11,
+    "round": 1,
+    "from": "Mediator",
+    "to": "DeptC",
+    "type": "CONFLICT",
+    "body": {
+      "section": "C1",
+      "slot": "M1",
+      "reason": "no free room"
+    }
+  },
+  {
+    "id": 12,
+    "round": 1,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "A4",
+      "slot": "M2",
+      "room": "R3"
+    }
+  },
+  {
+    "id": 13,
+    "round": 1,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "B2",
+      "slot": "M3",
+      "room": "R3"
+    }
+  },
+  {
+    "id": 14,
+    "round": 1,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "A2",
+      "slot": "M1",
+      "room": "R3"
+    }
+  },
+  {
+    "id": 15,
+    "round": 1,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "A3",
+      "slot": "T2",
+      "room": "LAB1"
+    }
+  },
+  {
+    "id": 16,
+    "round": 1,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "C2",
+      "slot": "M2",
+      "room": "R1"
+    }
+  },
+  {
+    "id": 17,
+    "round": 1,
+    "from": "Mediator",
+    "to": "DeptB",
+    "type": "CONFLICT",
+    "body": {
+      "section": "B3",
+      "slot": "T1",
+      "reason": "no free room"
+    }
+  },
+  {
+    "id": 18,
+    "round": 1,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "C4",
+      "slot": "M3",
+      "room": "R1"
+    }
+  },
+  {
+    "id": 19,
+    "round": 1,
+    "from": "Mediator",
+    "to": "ALL",
+    "type": "CONFLICT",
+    "body": {
+      "violations": [
+        "B3: missing/invalid assignment",
+        "C1: missing/invalid assignment"
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "round": 2,
+    "from": "Mediator",
+    "to": "DeptB",
+    "type": "CFP",
+    "body": {
+      "sections": [
+        "B3"
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "round": 2,
+    "from": "DeptB",
+    "to": "Mediator",
+    "type": "COUNTER",
+    "body": {
+      "proposals": [
+        {
+          "section": "B3",
+          "slot": "M4",
+          "room_pref": null
+        }
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "round": 2,
+    "from": "Mediator",
+    "to": "DeptC",
+    "type": "CFP",
+    "body": {
+      "sections": [
+        "C1"
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "round": 2,
+    "from": "DeptC",
+    "to": "Mediator",
+    "type": "COUNTER",
+    "body": {
+      "proposals": [
+        {
+          "section": "C1",
+          "slot": "M4",
+          "room_pref": null
+        }
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "round": 2,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "C1",
+      "slot": "M4",
+      "room": "R1"
+    }
+  },
+  {
+    "id": 25,
+    "round": 2,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "ACCEPT",
+    "body": {
+      "section": "B3",
+      "slot": "M4",
+      "room": "LAB1"
+    }
+  },
+  {
+    "id": 26,
+    "round": 2,
+    "from": "Mediator",
+    "to": "ALL",
+    "type": "ACCEPT",
+    "body": {
+      "violations": []
+    }
+  },
+  {
+    "id": 27,
+    "round": 3,
+    "from": "RoomManager",
+    "to": "Mediator",
+    "type": "CONFLICT",
+    "body": {
+      "reason": "R2 offline on Tuesday"
+    }
+  },
+  {
+    "id": 28,
+    "round": 3,
+    "from": "Mediator",
+    "to": "ALL",
+    "type": "ACCEPT",
+    "body": {
+      "violations": []
+    }
+  },
+  {
+    "id": 29,
+    "round": 3,
+    "from": "Mediator",
+    "to": "ALL",
+    "type": "COMMIT",
+    "body": {
+      "schedule": {
+        "B1": {
+          "slot": "M1",
+          "room": "R1"
+        },
+        "C3": {
+          "slot": "M1",
+          "room": "R2"
+        },
+        "A1": {
+          "slot": "T1",
+          "room": "R1"
+        },
+        "B4": {
+          "slot": "T3",
+          "room": "R1"
+        },
+        "A4": {
+          "slot": "M2",
+          "room": "R3"
+        },
+        "B2": {
+          "slot": "M3",
+          "room": "R3"
+        },
+        "A2": {
+          "slot": "M1",
+          "room": "R3"
+        },
+        "A3": {
+          "slot": "T2",
+          "room": "LAB1"
+        },
+        "C2": {
+          "slot": "M2",
+          "room": "R1"
+        },
+        "C4": {
+          "slot": "M3",
+          "room": "R1"
+        },
+        "C1": {
+          "slot": "M4",
+          "room": "R1"
+        },
+        "B3": {
+          "slot": "M4",
+          "room": "LAB1"
+        }
+      }
+    }
+  }
+]
