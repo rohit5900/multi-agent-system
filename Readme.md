@@ -7,7 +7,7 @@
 
 ## How to run
     python multiagent.py                                  # rule-based agents
-    GROQ_API_KEY=... python multiagent.py --llm      # LLM agents + single-LLM baseline
+    GROQ_API_KEY="..." python multiagent.py --llm      # LLM agents + single-LLM baseline
 
 ## Design
 - (a) `validate_schedule()`: plain Python, returns every violation (room clash, faculty clash, capacity, lab rules, offline room).
